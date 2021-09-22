@@ -6,7 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 
 let kAddSubjectName = "Please add a Subject Name"
 let kGlobalOK = "OK"
+
+let iPhoneHeight = UIScreen.main.bounds.size.height
+let iPhoneWidth  = UIScreen.main.bounds.size.width

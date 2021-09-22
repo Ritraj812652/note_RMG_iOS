@@ -86,3 +86,11 @@ extension SubjectViewController: UICollectionViewDataSource {
         return cell
     }
 }
+
+// MARK: - UITableview DelegateFlowLayout
+extension SubjectViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: iPhoneWidth/2, height: iPhoneWidth/2 + 10)
+    }
+}
