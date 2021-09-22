@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		157D54F826FAB8A200F37078 /* SubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D54F726FAB8A200F37078 /* SubjectModel.swift */; };
 		157D54FC26FAD38700F37078 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D54FB26FAD38700F37078 /* extension.swift */; };
+		157D54FE26FAD49500F37078 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D54FD26FAD49500F37078 /* Constant.swift */; };
 		C66AE51F26FAA8CB00B81A3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66AE51E26FAA8CB00B81A3C /* AppDelegate.swift */; };
 		C66AE52126FAA8CB00B81A3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66AE52026FAA8CB00B81A3C /* SceneDelegate.swift */; };
 		C66AE52626FAA8CB00B81A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66AE52426FAA8CB00B81A3C /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		157D54F726FAB8A200F37078 /* SubjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectModel.swift; sourceTree = "<group>"; };
 		157D54FB26FAD38700F37078 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
+		157D54FD26FAD49500F37078 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		C66AE51B26FAA8CB00B81A3C /* note_RMG_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = note_RMG_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66AE51E26FAA8CB00B81A3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C66AE52026FAA8CB00B81A3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				F971DF7C26FAC6EA00C3B052 /* Helper.swift */,
+				157D54FD26FAD49500F37078 /* Constant.swift */,
 				157D54FB26FAD38700F37078 /* extension.swift */,
 			);
 			path = Helper;
@@ -220,6 +223,7 @@
 				F971DF7E26FACA1300C3B052 /* SubjectCollectionCell.swift in Sources */,
 				C66AE53626FAD0B400B81A3C /* CoreData.swift in Sources */,
 				C66AE52926FAA8CB00B81A3C /* note_RMG_iOS.xcdatamodeld in Sources */,
+				157D54FE26FAD49500F37078 /* Constant.swift in Sources */,
 				C66AE52126FAA8CB00B81A3C /* SceneDelegate.swift in Sources */,
 				F971DF7D26FAC6EA00C3B052 /* Helper.swift in Sources */,
 			);

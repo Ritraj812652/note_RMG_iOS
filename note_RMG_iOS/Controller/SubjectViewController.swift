@@ -28,6 +28,16 @@ class SubjectViewController: UIViewController {
 
     }
     
+    // MARK: - UIAction
+    @IBAction func saveSubject(_ sender: Any) {
+        if addSubjectTextfield.text?.replacingOccurrences(of: " ", with: "") == "" {
+            self.showAlert(title: "", message: kAddSubjectName, buttonTitle: kGlobalOK)
+            return
+        }
+        saveCategory()
+        removeAddNewPopup()
+    }
+    
     @IBAction func closeAddSubjectPopup(_ sender: Any) {
         removeAddNewPopup()
     }
