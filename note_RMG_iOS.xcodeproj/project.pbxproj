@@ -15,6 +15,9 @@
 		C66AE52B26FAA8CD00B81A3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66AE52A26FAA8CD00B81A3C /* Assets.xcassets */; };
 		C66AE52E26FAA8CD00B81A3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66AE52C26FAA8CD00B81A3C /* LaunchScreen.storyboard */; };
 		F971DF6E26FABCA600C3B052 /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF6D26FABCA600C3B052 /* SubjectViewController.swift */; };
+		F971DF7D26FAC6EA00C3B052 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF7C26FAC6EA00C3B052 /* Helper.swift */; };
+		F971DF7E26FACA1300C3B052 /* SubjectCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF7826FABF1000C3B052 /* SubjectCollectionCell.swift */; };
+		F971DF7F26FACB6700C3B052 /* SubjectCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF7226FABF0100C3B052 /* SubjectCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,10 +33,9 @@
 		F971DF6D26FABCA600C3B052 /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
 		F971DF7226FABF0100C3B052 /* SubjectCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCollectionCell.swift; sourceTree = "<group>"; };
 		F971DF7326FABF0100C3B052 /* SubjectCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectCollectionCell.xib; sourceTree = "<group>"; };
-		F971DF7526FABF0700C3B052 /* SubjectCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCollectionCell.swift; sourceTree = "<group>"; };
-		F971DF7626FABF0700C3B052 /* SubjectCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectCollectionCell.xib; sourceTree = "<group>"; };
 		F971DF7826FABF1000C3B052 /* SubjectCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCollectionCell.swift; sourceTree = "<group>"; };
 		F971DF7926FABF1000C3B052 /* SubjectCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectCollectionCell.xib; sourceTree = "<group>"; };
+		F971DF7C26FAC6EA00C3B052 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				C66AE52A26FAA8CD00B81A3C /* Assets.xcassets */,
-				C66AE52F26FAA8CD00B81A3C /* Info.plist */,
 				C66AE52026FAA8CB00B81A3C /* SceneDelegate.swift */,
 				C66AE51E26FAA8CB00B81A3C /* AppDelegate.swift */,
 			);
@@ -71,7 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				F971DF7126FABF0100C3B052 /* xib */,
-				F971DF7426FABF0700C3B052 /* xib */,
 				C66AE52726FAA8CB00B81A3C /* note_RMG_iOS.xcdatamodeld */,
 			);
 			path = Model;
@@ -97,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				C66AE51D26FAA8CB00B81A3C /* note_RMG_iOS */,
+				F971DF7C26FAC6EA00C3B052 /* Helper.swift */,
 				C66AE51C26FAA8CB00B81A3C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,6 +117,7 @@
 				157D54F526FAB62300F37078 /* Controller */,
 				157D54F426FAB60600F37078 /* Model */,
 				F971DF7726FABF1000C3B052 /* xib */,
+				C66AE52F26FAA8CD00B81A3C /* Info.plist */,
 				157D54F326FAB5F300F37078 /* View */,
 				157D54F226FAB5D700F37078 /* SupportingFiles */,
 			);
@@ -129,16 +131,6 @@
 				F971DF7326FABF0100C3B052 /* SubjectCollectionCell.xib */,
 			);
 			path = xib;
-			sourceTree = "<group>";
-		};
-		F971DF7426FABF0700C3B052 /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				F971DF7526FABF0700C3B052 /* SubjectCollectionCell.swift */,
-				F971DF7626FABF0700C3B052 /* SubjectCollectionCell.xib */,
-			);
-			name = xib;
-			path = "../../../../Downloads/Final Project/note_RMG_iOS/note_RMG_iOS/xib";
 			sourceTree = "<group>";
 		};
 		F971DF7726FABF1000C3B052 /* xib */ = {
@@ -222,9 +214,12 @@
 			files = (
 				F971DF6E26FABCA600C3B052 /* SubjectViewController.swift in Sources */,
 				157D54F826FAB8A200F37078 /* SubjectModel.swift in Sources */,
+				F971DF7F26FACB6700C3B052 /* SubjectCollectionCell.swift in Sources */,
 				C66AE51F26FAA8CB00B81A3C /* AppDelegate.swift in Sources */,
+				F971DF7E26FACA1300C3B052 /* SubjectCollectionCell.swift in Sources */,
 				C66AE52926FAA8CB00B81A3C /* note_RMG_iOS.xcdatamodeld in Sources */,
 				C66AE52126FAA8CB00B81A3C /* SceneDelegate.swift in Sources */,
+				F971DF7D26FAC6EA00C3B052 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

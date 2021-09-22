@@ -1,8 +1,8 @@
 //
-//  SubjectCollectionCell.swift
+//  SubjectViewController.swift
 //  note_RMG_iOS
 //
-//  Created by Sidharth Khanna on 20/09/21.
+//  Created by Suresh on 2021-09-21.
 //
 
 import UIKit

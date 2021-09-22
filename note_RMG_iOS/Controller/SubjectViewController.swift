@@ -30,14 +30,19 @@ class SubjectViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+}
+extension SubjectViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return subjectsArray?.count ?? 0
     }
-    */
-
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: SubjectCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubjectCollectionCell", for: indexPath) as! SubjectCollectionCell
+        let subject = subjectsArray![indexPath.item]
+        cell.headingLabel.text = subject.title
+        cell.descriptionLabel.text = Helper().showDayDifference(date: subject.createdDate)
+        //cell.backView.backgroundColor = Helper().getNoteBackColor().randomElement()
+        return cell
+    }
 }
