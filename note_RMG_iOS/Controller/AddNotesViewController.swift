@@ -193,6 +193,22 @@ class AddNotesViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
         sender.view?.removeFromSuperview()
     }
-    }
 
+
+}
+
+
+
+// MARK: - UIImagePicker Delegate
+extension AddNotesViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if info[UIImagePickerController.InfoKey.originalImage] != nil {
+            let image = (info[UIImagePickerController.InfoKey.originalImage] as? UIImage)?.fixOrientation()
+            
+            self.image = (image?.jpegData(compressionQuality: 1.0))!
+            self.addedImage.image = UIImage.init(data: self.image)
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
 }
