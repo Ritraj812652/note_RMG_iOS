@@ -20,13 +20,20 @@ class NotesViewViewController: UIViewController {
         }
     }
     
-   
+    var filterArray = [NotesModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = CurrentObject.sharedInstance.selectedSubject?.title
         
         collectionView.register(UINib.init(nibName: "SubjectCollectionCell", bundle: nil), forCellWithReuseIdentifier: "SubjectCollectionCell")
         // Do any additional setup after loading the view.
+    }
+    
+    
+    // MARK: - Functions
+    func loadData() {
+        self.notesArray = CoreData().loadNotesData(id: CurrentObject.sharedInstance.selectedSubject!.createdDate)
+        self.filterArray = notesArray!
     }
 
 }
