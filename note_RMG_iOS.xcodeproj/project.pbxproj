@@ -20,6 +20,7 @@
 		F971DF6E26FABCA600C3B052 /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF6D26FABCA600C3B052 /* SubjectViewController.swift */; };
 		F971DF7D26FAC6EA00C3B052 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF7C26FAC6EA00C3B052 /* Helper.swift */; };
 		F971DF7E26FACA1300C3B052 /* SubjectCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF7826FABF1000C3B052 /* SubjectCollectionCell.swift */; };
+		F971DF8126FAEF1500C3B052 /* NotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF8026FAEF1500C3B052 /* NotesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		F971DF7826FABF1000C3B052 /* SubjectCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCollectionCell.swift; sourceTree = "<group>"; };
 		F971DF7926FABF1000C3B052 /* SubjectCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectCollectionCell.xib; sourceTree = "<group>"; };
 		F971DF7C26FAC6EA00C3B052 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		F971DF8026FAEF1500C3B052 /* NotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				157D54F726FAB8A200F37078 /* SubjectModel.swift */,
+				F971DF8026FAEF1500C3B052 /* NotesModel.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			files = (
 				F971DF6E26FABCA600C3B052 /* SubjectViewController.swift in Sources */,
 				157D54F826FAB8A200F37078 /* SubjectModel.swift in Sources */,
+				F971DF8126FAEF1500C3B052 /* NotesModel.swift in Sources */,
 				C66AE51F26FAA8CB00B81A3C /* AppDelegate.swift in Sources */,
 				157D54FC26FAD38700F37078 /* extension.swift in Sources */,
 				F971DF7E26FACA1300C3B052 /* SubjectCollectionCell.swift in Sources */,
