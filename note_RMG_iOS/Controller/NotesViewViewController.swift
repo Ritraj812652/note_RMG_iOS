@@ -63,4 +63,10 @@ extension NotesViewViewController: UISearchBarDelegate {
         self.searchBar.resignFirstResponder()
         collectionView.reloadData()
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.text = ""
+        filterArray = notesArray!
+        collectionView.reloadData()
+    }
 }
