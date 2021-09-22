@@ -7,6 +7,9 @@
 
 import UIKit
 import CoreLocation
+import MapKit
+import Photos
+import MobileCoreServices
 
 class AddNotesViewController: UIViewController {
 
@@ -21,10 +24,23 @@ class AddNotesViewController: UIViewController {
     
     var latitude  : Double?
     var longitude : Double?
+    var image = Data()
     
     var isEdit = false
     
-    var locationManager: CLLocationManager!
+    var locationManager = CLLocationManager()
+    
+    var recordingSession: AVAudioSession!
+    var audioRecorder: AVAudioRecorder!
+    var audioPlayer : AVAudioPlayer!
+    
+    var mAudioFileName: String = ""
+    
+    var notes: NotesModel? {
+        didSet {
+            refreshUI()
+        }
+    }
 
     
     override func viewDidLoad() {
@@ -43,6 +59,33 @@ class AddNotesViewController: UIViewController {
                 self.longitude = locationManager.location?.coordinate.longitude
              
             }
+        }
+    }
+    
+    private func refreshUI() {
+        loadViewIfNeeded()
+        if self.notes != nil {
+            self.titleTextField.text = notes?.title
+            self.notesTextField.text = notes?.noteDesc
+            self.latitude = notes?.latitude
+            self.longitude = notes?.longitude
+            self.image = notes!.image
+            self.addedImage.image = UIImage.init(data: notes!.image)
+            self.mAudioFileName = notes!.audioFileLocation
+            if notes!.audioFileLocation != "" {
+                playAudioImage.isHidden = false
+                playAudioButton.isHidden = false
+            }
+        }
+    }
+    
+    func save() {
+        let createdDate = Date().toMillis()
+        
+        let model = NotesModel.init(title: titleTextField.text!, noteDesc: notesTextField.text!, createdDate: createdDate!, editedDate: Date().toMillis(), latitude: latitude ?? 0.0, longitude: longitude ?? 0.0, primaryKey: CurrentObject.sharedInstance.selectedSubject!.createdDate, image: self.image, audioFileLocation: self.mAudioFileName)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.navigationController?.popViewController(animated: true)
         }
     }
     

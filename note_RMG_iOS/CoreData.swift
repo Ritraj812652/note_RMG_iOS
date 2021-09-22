@@ -98,6 +98,7 @@ func saveNote(entity: NotesModel) {
     category.setValue(dataPoint.noteDesc, forKeyPath: "noteDesc")
     category.setValue(dataPoint.title, forKeyPath: "title")
     category.setValue(dataPoint.image, forKeyPath: "image")
+    category.setValue(dataPoint.audioFileLocation, forKeyPath: "audioFileLocation")
      
     do {
         try managedContext.save()
