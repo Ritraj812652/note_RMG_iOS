@@ -106,6 +106,54 @@ class AddNotesViewController: UIViewController {
     @IBAction func openLocation(_ sender: Any) {
     }
     
+    
+    @IBAction func addImage(_ sender: Any) {
+        let alert = UIAlertController.init(title: "", message: "ATTACHMENTS", preferredStyle: .actionSheet)
+        let cameraBtn = UIAlertAction.init(title: "Camera", style: .default) { (alert) in
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera)
+            {
+                
+                let imagePicker = UIImagePickerController()
+                
+                imagePicker.delegate = self
+                imagePicker.sourceType = UIImagePickerController.SourceType.camera;
+                
+                self.present(imagePicker, animated: true, completion: nil)
+            }
+            else
+            {
+                self.showAlert(title: "", message: kCameraError, buttonTitle: "OK")
+                
+            }
+        }
+        let galleryBtn = UIAlertAction.init(title: "Gallery", style: .default) { (alerty) in
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.savedPhotosAlbum)
+            {
+                
+                let imagePicker = UIImagePickerController()
+                
+                imagePicker.delegate = self
+                imagePicker.sourceType = UIImagePickerController.SourceType.savedPhotosAlbum;
+                imagePicker.mediaTypes = ["public.image"]
+                
+                self.present(imagePicker, animated: true, completion: nil)
+            }
+            else
+            {
+                self.showAlert(title: "", message: kCameraError, buttonTitle: "OK")
+                
+            }
+        }
+        
+        let cancel = UIAlertAction.init(title: "Cancel", style: .destructive, handler: nil)
+        alert.addAction(cameraBtn)
+        alert.addAction(galleryBtn)
+        alert.addAction(cancel)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    
     @IBAction func saveAction(_ sender: Any) {
         if titleTextField.text == "" {
             self.showAlert(title: "", message: kAddTitle, buttonTitle: kGlobalOK)
