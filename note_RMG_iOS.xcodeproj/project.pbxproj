@@ -12,6 +12,7 @@
 		157D54FC26FAD38700F37078 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D54FB26FAD38700F37078 /* extension.swift */; };
 		157D54FE26FAD49500F37078 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D54FD26FAD49500F37078 /* Constant.swift */; };
 		157D550026FAF79D00F37078 /* NotesViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D54FF26FAF79D00F37078 /* NotesViewViewController.swift */; };
+		157D550226FB152100F37078 /* AddNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D550126FB152100F37078 /* AddNotesViewController.swift */; };
 		C66AE51F26FAA8CB00B81A3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66AE51E26FAA8CB00B81A3C /* AppDelegate.swift */; };
 		C66AE52126FAA8CB00B81A3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66AE52026FAA8CB00B81A3C /* SceneDelegate.swift */; };
 		C66AE52626FAA8CB00B81A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66AE52426FAA8CB00B81A3C /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		157D54FB26FAD38700F37078 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		157D54FD26FAD49500F37078 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		157D54FF26FAF79D00F37078 /* NotesViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewViewController.swift; sourceTree = "<group>"; };
+		157D550126FB152100F37078 /* AddNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotesViewController.swift; sourceTree = "<group>"; };
 		17AB59A97A44DE6CC7DAE25E /* Pods-note_RMG_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-note_RMG_iOS.release.xcconfig"; path = "Target Support Files/Pods-note_RMG_iOS/Pods-note_RMG_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		9E6F9DF67B5510588C4266DC /* Pods-note_RMG_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-note_RMG_iOS.debug.xcconfig"; path = "Target Support Files/Pods-note_RMG_iOS/Pods-note_RMG_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C24F310D95C08F5B5E848888 /* Pods_note_RMG_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_note_RMG_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +106,7 @@
 			children = (
 				F971DF6D26FABCA600C3B052 /* SubjectViewController.swift */,
 				157D54FF26FAF79D00F37078 /* NotesViewViewController.swift */,
+				157D550126FB152100F37078 /* AddNotesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				C66AE51F26FAA8CB00B81A3C /* AppDelegate.swift in Sources */,
 				157D54FC26FAD38700F37078 /* extension.swift in Sources */,
 				C66AE53626FAD0B400B81A3C /* CoreData.swift in Sources */,
+				157D550226FB152100F37078 /* AddNotesViewController.swift in Sources */,
 				C6F61B9426FB116200664113 /* SubjectCollectionCell.swift in Sources */,
 				C66AE52926FAA8CB00B81A3C /* note_RMG_iOS.xcdatamodeld in Sources */,
 				157D54FE26FAD49500F37078 /* Constant.swift in Sources */,
