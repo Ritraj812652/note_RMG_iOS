@@ -70,3 +70,20 @@ extension NotesViewViewController: UISearchBarDelegate {
         collectionView.reloadData()
     }
 }
+
+// MARK: - UITableview DelegateFlowLayout
+extension NotesViewViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: iPhoneWidth/2, height: iPhoneWidth/2 + 10)
+    }
+}
+
+extension NotesViewViewController: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedIndex = indexPath.item
+        
+        self.performSegue(withIdentifier: "AddEditNotes", sender: self)
+    }
+}
+
