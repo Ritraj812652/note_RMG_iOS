@@ -14,3 +14,8 @@ let kGlobalOK = "OK"
 
 let iPhoneHeight = UIScreen.main.bounds.size.height
 let iPhoneWidth  = UIScreen.main.bounds.size.width
+
+let kAddTitle = "Please add title"
+let kAddNote = "Please add note"
+
+
