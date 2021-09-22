@@ -25,7 +25,7 @@ class SubjectViewController: UIViewController {
         
         collectionView.register(UINib.init(nibName: "SubjectCollectionCell", bundle: nil), forCellWithReuseIdentifier: "SubjectCollectionCell")
         
-
+        loadData()
     }
     
     // MARK: - UIAction
