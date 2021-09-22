@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		157D54F826FAB8A200F37078 /* SubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D54F726FAB8A200F37078 /* SubjectModel.swift */; };
+		157D54FC26FAD38700F37078 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D54FB26FAD38700F37078 /* extension.swift */; };
 		C66AE51F26FAA8CB00B81A3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66AE51E26FAA8CB00B81A3C /* AppDelegate.swift */; };
 		C66AE52126FAA8CB00B81A3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66AE52026FAA8CB00B81A3C /* SceneDelegate.swift */; };
 		C66AE52626FAA8CB00B81A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66AE52426FAA8CB00B81A3C /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		157D54F726FAB8A200F37078 /* SubjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectModel.swift; sourceTree = "<group>"; };
+		157D54FB26FAD38700F37078 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		C66AE51B26FAA8CB00B81A3C /* note_RMG_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = note_RMG_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66AE51E26FAA8CB00B81A3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C66AE52026FAA8CB00B81A3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,11 +93,19 @@
 			path = Class;
 			sourceTree = "<group>";
 		};
+		157D54FA26FAD34F00F37078 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F971DF7C26FAC6EA00C3B052 /* Helper.swift */,
+				157D54FB26FAD38700F37078 /* extension.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		C66AE51226FAA8CB00B81A3C = {
 			isa = PBXGroup;
 			children = (
 				C66AE51D26FAA8CB00B81A3C /* note_RMG_iOS */,
-				F971DF7C26FAC6EA00C3B052 /* Helper.swift */,
 				C66AE51C26FAA8CB00B81A3C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -111,6 +121,7 @@
 		C66AE51D26FAA8CB00B81A3C /* note_RMG_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				157D54FA26FAD34F00F37078 /* Helper */,
 				157D54F626FAB84F00F37078 /* Class */,
 				157D54F526FAB62300F37078 /* Controller */,
 				157D54F426FAB60600F37078 /* Model */,
@@ -205,6 +216,7 @@
 				F971DF6E26FABCA600C3B052 /* SubjectViewController.swift in Sources */,
 				157D54F826FAB8A200F37078 /* SubjectModel.swift in Sources */,
 				C66AE51F26FAA8CB00B81A3C /* AppDelegate.swift in Sources */,
+				157D54FC26FAD38700F37078 /* extension.swift in Sources */,
 				F971DF7E26FACA1300C3B052 /* SubjectCollectionCell.swift in Sources */,
 				C66AE53626FAD0B400B81A3C /* CoreData.swift in Sources */,
 				C66AE52926FAA8CB00B81A3C /* note_RMG_iOS.xcdatamodeld in Sources */,

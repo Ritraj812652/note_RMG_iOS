@@ -27,6 +27,34 @@ class SubjectViewController: UIViewController {
         
 
     }
+    
+    @IBAction func closeAddSubjectPopup(_ sender: Any) {
+        removeAddNewPopup()
+    }
+    
+    @IBAction func openAddNewSubject(_ sender: Any) {
+        addSubjectView.isHidden = false
+        self.view.bringSubviewToFront(addSubjectView)
+    }
+    
+    // MARK: - Functions
+    func loadData() {
+        self.subjectsArray = CoreData().loadSubjectData()
+    }
+    
+    func removeAddNewPopup() {
+        addSubjectView.isHidden = true
+        self.view.sendSubviewToBack(addSubjectView)
+    }
+    
+    func saveCategory() {
+        let subject = SubjectModel.init(title: addSubjectTextfield.text!, date: Date().toMillis())
+        CoreData().saveSubject(entity: subject)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.loadData()
+        }
+    }
 
  
 
