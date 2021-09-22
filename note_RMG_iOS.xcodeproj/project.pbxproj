@@ -21,6 +21,7 @@
 		F971DF7D26FAC6EA00C3B052 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF7C26FAC6EA00C3B052 /* Helper.swift */; };
 		F971DF7E26FACA1300C3B052 /* SubjectCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF7826FABF1000C3B052 /* SubjectCollectionCell.swift */; };
 		F971DF8126FAEF1500C3B052 /* NotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF8026FAEF1500C3B052 /* NotesModel.swift */; };
+		F971DF8326FAF55B00C3B052 /* ClassObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF8226FAF55B00C3B052 /* ClassObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		F971DF7926FABF1000C3B052 /* SubjectCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectCollectionCell.xib; sourceTree = "<group>"; };
 		F971DF7C26FAC6EA00C3B052 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		F971DF8026FAEF1500C3B052 /* NotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesModel.swift; sourceTree = "<group>"; };
+		F971DF8226FAF55B00C3B052 /* ClassObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			children = (
 				157D54F726FAB8A200F37078 /* SubjectModel.swift */,
 				F971DF8026FAEF1500C3B052 /* NotesModel.swift */,
+				F971DF8226FAF55B00C3B052 /* ClassObject.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				C66AE53626FAD0B400B81A3C /* CoreData.swift in Sources */,
 				C66AE52926FAA8CB00B81A3C /* note_RMG_iOS.xcdatamodeld in Sources */,
 				157D54FE26FAD49500F37078 /* Constant.swift in Sources */,
+				F971DF8326FAF55B00C3B052 /* ClassObject.swift in Sources */,
 				C66AE52126FAA8CB00B81A3C /* SceneDelegate.swift in Sources */,
 				F971DF7D26FAC6EA00C3B052 /* Helper.swift in Sources */,
 			);
