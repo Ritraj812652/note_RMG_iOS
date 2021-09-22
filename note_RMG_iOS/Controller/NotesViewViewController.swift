@@ -42,6 +42,18 @@ class NotesViewViewController: UIViewController {
         self.notesArray = CoreData().loadNotesData(id: CurrentObject.sharedInstance.selectedSubject!.createdDate)
         self.filterArray = notesArray!
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddEditNotes" {
+            if selectedIndex != nil {
+                //notes selected
+                let vc = segue.destination as! AddNotesViewController
+                vc.isEdit = true
+                vc.notes = self.notesArray![selectedIndex!]
+            }
+        }
+    }
+    
 }
 //MARK: - DataSource Methods
 extension NotesViewViewController: UICollectionViewDataSource {

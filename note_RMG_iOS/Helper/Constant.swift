@@ -17,5 +17,7 @@ let iPhoneWidth  = UIScreen.main.bounds.size.width
 
 let kAddTitle = "Please add title"
 let kAddNote = "Please add note"
+let kCameraError = "Device doesn’t support that media source."
+
 
 

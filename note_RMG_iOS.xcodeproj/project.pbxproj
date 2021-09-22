@@ -22,6 +22,7 @@
 		C66AE53626FAD0B400B81A3C /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66AE53526FAD0B400B81A3C /* CoreData.swift */; };
 		C6F61B9326FB116200664113 /* SubjectCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6F61B9126FB116200664113 /* SubjectCollectionCell.xib */; };
 		C6F61B9426FB116200664113 /* SubjectCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F61B9226FB116200664113 /* SubjectCollectionCell.swift */; };
+		C6F61B9626FBAA3100664113 /* UiviewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F61B9526FBAA3100664113 /* UiviewExtension.swift */; };
 		F971DF6E26FABCA600C3B052 /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF6D26FABCA600C3B052 /* SubjectViewController.swift */; };
 		F971DF7D26FAC6EA00C3B052 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF7C26FAC6EA00C3B052 /* Helper.swift */; };
 		F971DF8126FAEF1500C3B052 /* NotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF8026FAEF1500C3B052 /* NotesModel.swift */; };
@@ -48,6 +49,7 @@
 		C66AE53526FAD0B400B81A3C /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		C6F61B9126FB116200664113 /* SubjectCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubjectCollectionCell.xib; sourceTree = "<group>"; };
 		C6F61B9226FB116200664113 /* SubjectCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectCollectionCell.swift; sourceTree = "<group>"; };
+		C6F61B9526FBAA3100664113 /* UiviewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiviewExtension.swift; sourceTree = "<group>"; };
 		F971DF6D26FABCA600C3B052 /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
 		F971DF7C26FAC6EA00C3B052 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		F971DF8026FAEF1500C3B052 /* NotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesModel.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				F971DF7C26FAC6EA00C3B052 /* Helper.swift */,
 				157D54FD26FAD49500F37078 /* Constant.swift */,
 				157D54FB26FAD38700F37078 /* extension.swift */,
+				C6F61B9526FBAA3100664113 /* UiviewExtension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				F971DF8126FAEF1500C3B052 /* NotesModel.swift in Sources */,
 				C66AE51F26FAA8CB00B81A3C /* AppDelegate.swift in Sources */,
 				157D54FC26FAD38700F37078 /* extension.swift in Sources */,
+				C6F61B9626FBAA3100664113 /* UiviewExtension.swift in Sources */,
 				C66AE53626FAD0B400B81A3C /* CoreData.swift in Sources */,
 				157D550226FB152100F37078 /* AddNotesViewController.swift in Sources */,
 				C6F61B9426FB116200664113 /* SubjectCollectionCell.swift in Sources */,
