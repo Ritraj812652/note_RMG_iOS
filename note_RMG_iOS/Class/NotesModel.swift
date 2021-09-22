@@ -17,6 +17,7 @@ class NotesModel {
     let noteDesc: String
     let title: String
     let image: Data
+    let audioFileLocation: String
     
     init(_ data: NSManagedObject) {
         self.title = data.value(forKey: "title") as! String
@@ -27,9 +28,10 @@ class NotesModel {
         self.longitude = data.value(forKey: "longitude") as! Double
         self.primaryKey = data.value(forKey: "primaryKey") as! Double
         self.image = data.value(forKey: "image") as? Data ?? Data()
+        self.audioFileLocation = data.value(forKey: "audioFileLocation") as! String
     }
     
-    init(title: String, noteDesc: String, createdDate: Double, editedDate: Double, latitude: Double, longitude: Double, primaryKey: Double, image: Data) {
+    init(title: String, noteDesc: String, createdDate: Double, editedDate: Double, latitude: Double, longitude: Double, primaryKey: Double, image: Data, audioFileLocation: String) {
         self.title = title
         self.noteDesc = noteDesc
         self.createdDate = createdDate
@@ -38,5 +40,6 @@ class NotesModel {
         self.longitude = longitude
         self.primaryKey = primaryKey
         self.image = image
+        self.audioFileLocation = audioFileLocation
     }
 }
