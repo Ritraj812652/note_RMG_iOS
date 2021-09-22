@@ -96,4 +96,9 @@ extension SubjectViewController: UICollectionViewDelegateFlowLayout {
     
 }
 
-
+extension SubjectViewController: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        CurrentObject.sharedInstance.selectedSubject = subjectsArray![indexPath.item]
+        self.performSegue(withIdentifier: "DetailSegue", sender: self)
+    }
+}
