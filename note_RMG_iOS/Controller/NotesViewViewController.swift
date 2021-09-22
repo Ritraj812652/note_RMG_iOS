@@ -51,4 +51,16 @@ extension NotesViewViewController: UICollectionViewDataSource {
         return cell
     }
 }
-
+extension NotesViewViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if searchBar.text == "" {
+            filterArray = notesArray!
+        }
+        else {
+            filterArray = (notesArray?.filter { $0.title.lowercased().contains(searchBar.text!.lowercased())})!
+        }
+        self.searchBar.resignFirstResponder()
+        collectionView.reloadData()
+    }
+}
