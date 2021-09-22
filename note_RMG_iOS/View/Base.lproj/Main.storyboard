@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Expenses-->
+        <!--Categories-->
         <scene sceneID="5Ni-yp-x9x">
             <objects>
                 <viewController storyboardIdentifier="SubjectViewController" id="eOW-2u-78i" customClass="SubjectViewController" customModule="note_RMG_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -135,7 +135,7 @@
                             <constraint firstItem="jev-u9-dYS" firstAttribute="bottom" secondItem="NBz-m0-7ix" secondAttribute="bottom" id="xW2-VZ-fcW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Expenses" id="68i-gB-lM9">
+                    <navigationItem key="navigationItem" title="Categories" id="68i-gB-lM9">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="POe-ph-liv">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -163,9 +163,6 @@
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -180,7 +177,7 @@
             </objects>
             <point key="canvasLocation" x="-214.49275362318843" y="76.339285714285708"/>
         </scene>
-        <!--Categories-->
+        <!--Notebook-->
         <scene sceneID="nhO-k3-Ex9">
             <objects>
                 <viewController storyboardIdentifier="NotesViewViewController" id="17H-GW-of6" customClass="NotesViewViewController" customModule="note_RMG_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -232,7 +229,7 @@
                             <constraint firstItem="GKr-qP-jkT" firstAttribute="leading" secondItem="2TU-32-315" secondAttribute="leading" constant="10" id="oh4-hw-esO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Categories" id="qhK-X0-yes">
+                    <navigationItem key="navigationItem" title="Notebook" id="qhK-X0-yes">
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="aSR-yj-ZyV">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>

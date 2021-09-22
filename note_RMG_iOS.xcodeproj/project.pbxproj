@@ -14,10 +14,10 @@
 		C66AE52926FAA8CB00B81A3C /* note_RMG_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C66AE52726FAA8CB00B81A3C /* note_RMG_iOS.xcdatamodeld */; };
 		C66AE52B26FAA8CD00B81A3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66AE52A26FAA8CD00B81A3C /* Assets.xcassets */; };
 		C66AE52E26FAA8CD00B81A3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66AE52C26FAA8CD00B81A3C /* LaunchScreen.storyboard */; };
+		C66AE53626FAD0B400B81A3C /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66AE53526FAD0B400B81A3C /* CoreData.swift */; };
 		F971DF6E26FABCA600C3B052 /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF6D26FABCA600C3B052 /* SubjectViewController.swift */; };
 		F971DF7D26FAC6EA00C3B052 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF7C26FAC6EA00C3B052 /* Helper.swift */; };
 		F971DF7E26FACA1300C3B052 /* SubjectCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF7826FABF1000C3B052 /* SubjectCollectionCell.swift */; };
-		F971DF7F26FACB6700C3B052 /* SubjectCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF7226FABF0100C3B052 /* SubjectCollectionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,9 +30,8 @@
 		C66AE52A26FAA8CD00B81A3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C66AE52D26FAA8CD00B81A3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C66AE52F26FAA8CD00B81A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C66AE53526FAD0B400B81A3C /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		F971DF6D26FABCA600C3B052 /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
-		F971DF7226FABF0100C3B052 /* SubjectCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCollectionCell.swift; sourceTree = "<group>"; };
-		F971DF7326FABF0100C3B052 /* SubjectCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectCollectionCell.xib; sourceTree = "<group>"; };
 		F971DF7826FABF1000C3B052 /* SubjectCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectCollectionCell.swift; sourceTree = "<group>"; };
 		F971DF7926FABF1000C3B052 /* SubjectCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubjectCollectionCell.xib; sourceTree = "<group>"; };
 		F971DF7C26FAC6EA00C3B052 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -71,7 +70,6 @@
 		157D54F426FAB60600F37078 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F971DF7126FABF0100C3B052 /* xib */,
 				C66AE52726FAA8CB00B81A3C /* note_RMG_iOS.xcdatamodeld */,
 			);
 			path = Model;
@@ -120,17 +118,9 @@
 				C66AE52F26FAA8CD00B81A3C /* Info.plist */,
 				157D54F326FAB5F300F37078 /* View */,
 				157D54F226FAB5D700F37078 /* SupportingFiles */,
+				C66AE53526FAD0B400B81A3C /* CoreData.swift */,
 			);
 			path = note_RMG_iOS;
-			sourceTree = "<group>";
-		};
-		F971DF7126FABF0100C3B052 /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				F971DF7226FABF0100C3B052 /* SubjectCollectionCell.swift */,
-				F971DF7326FABF0100C3B052 /* SubjectCollectionCell.xib */,
-			);
-			path = xib;
 			sourceTree = "<group>";
 		};
 		F971DF7726FABF1000C3B052 /* xib */ = {
@@ -214,9 +204,9 @@
 			files = (
 				F971DF6E26FABCA600C3B052 /* SubjectViewController.swift in Sources */,
 				157D54F826FAB8A200F37078 /* SubjectModel.swift in Sources */,
-				F971DF7F26FACB6700C3B052 /* SubjectCollectionCell.swift in Sources */,
 				C66AE51F26FAA8CB00B81A3C /* AppDelegate.swift in Sources */,
 				F971DF7E26FACA1300C3B052 /* SubjectCollectionCell.swift in Sources */,
+				C66AE53626FAD0B400B81A3C /* CoreData.swift in Sources */,
 				C66AE52926FAA8CB00B81A3C /* note_RMG_iOS.xcdatamodeld in Sources */,
 				C66AE52126FAA8CB00B81A3C /* SceneDelegate.swift in Sources */,
 				F971DF7D26FAC6EA00C3B052 /* Helper.swift in Sources */,

@@ -26,12 +26,14 @@ class SubjectViewController: UIViewController {
         collectionView.register(UINib.init(nibName: "SubjectCollectionCell", bundle: nil), forCellWithReuseIdentifier: "SubjectCollectionCell")
         
 
-        // Do any additional setup after loading the view.
     }
-    
+
+ 
 
     
 }
+
+// MARK: - DataSource Methods
 extension SubjectViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return subjectsArray?.count ?? 0
