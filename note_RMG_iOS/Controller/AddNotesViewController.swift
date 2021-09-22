@@ -97,6 +97,21 @@ class AddNotesViewController: UIViewController {
     @IBAction func openLocation(_ sender: Any) {
     }
     
-
+    @IBAction func saveAction(_ sender: Any) {
+        if titleTextField.text == "" {
+            self.showAlert(title: "", message: kAddTitle, buttonTitle: kGlobalOK)
+        }
+        else if notesTextField.text == "" {
+            self.showAlert(title: "", message: kAddNote, buttonTitle: kGlobalOK)
+        }
+        else {
+            if isEdit {
+                update()
+            }
+            else {
+                save()
+            }
+        }
+    }
 
 }
