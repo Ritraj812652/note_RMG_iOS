@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F7C33F319D92697790241E1 /* Pods_note_RMG_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C24F310D95C08F5B5E848888 /* Pods_note_RMG_iOS.framework */; };
 		157D54F826FAB8A200F37078 /* SubjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D54F726FAB8A200F37078 /* SubjectModel.swift */; };
 		157D54FC26FAD38700F37078 /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D54FB26FAD38700F37078 /* extension.swift */; };
 		157D54FE26FAD49500F37078 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D54FD26FAD49500F37078 /* Constant.swift */; };
@@ -30,6 +31,9 @@
 		157D54FB26FAD38700F37078 /* extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		157D54FD26FAD49500F37078 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		157D54FF26FAF79D00F37078 /* NotesViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewViewController.swift; sourceTree = "<group>"; };
+		17AB59A97A44DE6CC7DAE25E /* Pods-note_RMG_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-note_RMG_iOS.release.xcconfig"; path = "Target Support Files/Pods-note_RMG_iOS/Pods-note_RMG_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		9E6F9DF67B5510588C4266DC /* Pods-note_RMG_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-note_RMG_iOS.debug.xcconfig"; path = "Target Support Files/Pods-note_RMG_iOS/Pods-note_RMG_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		C24F310D95C08F5B5E848888 /* Pods_note_RMG_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_note_RMG_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66AE51B26FAA8CB00B81A3C /* note_RMG_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = note_RMG_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66AE51E26FAA8CB00B81A3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C66AE52026FAA8CB00B81A3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,12 +56,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F7C33F319D92697790241E1 /* Pods_note_RMG_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02598702203F21546E2EDA97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C24F310D95C08F5B5E848888 /* Pods_note_RMG_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		157D54F226FAB5D700F37078 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +132,8 @@
 			children = (
 				C66AE51D26FAA8CB00B81A3C /* note_RMG_iOS */,
 				C66AE51C26FAA8CB00B81A3C /* Products */,
+				FE94D508974A5F96A441428B /* Pods */,
+				02598702203F21546E2EDA97 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,6 +170,16 @@
 			path = xib;
 			sourceTree = "<group>";
 		};
+		FE94D508974A5F96A441428B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E6F9DF67B5510588C4266DC /* Pods-note_RMG_iOS.debug.xcconfig */,
+				17AB59A97A44DE6CC7DAE25E /* Pods-note_RMG_iOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,9 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C66AE53226FAA8CD00B81A3C /* Build configuration list for PBXNativeTarget "note_RMG_iOS" */;
 			buildPhases = (
+				3A7B68E1E6B01CFA58593541 /* [CP] Check Pods Manifest.lock */,
 				C66AE51726FAA8CB00B81A3C /* Sources */,
 				C66AE51826FAA8CB00B81A3C /* Frameworks */,
 				C66AE51926FAA8CB00B81A3C /* Resources */,
+				04C14903D4B05A2525B641AD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -219,6 +246,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04C14903D4B05A2525B641AD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-note_RMG_iOS/Pods-note_RMG_iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-note_RMG_iOS/Pods-note_RMG_iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-note_RMG_iOS/Pods-note_RMG_iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A7B68E1E6B01CFA58593541 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-note_RMG_iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C66AE51726FAA8CB00B81A3C /* Sources */ = {
@@ -381,6 +450,7 @@
 		};
 		C66AE53326FAA8CD00B81A3C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E6F9DF67B5510588C4266DC /* Pods-note_RMG_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -399,6 +469,7 @@
 		};
 		C66AE53426FAA8CD00B81A3C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17AB59A97A44DE6CC7DAE25E /* Pods-note_RMG_iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
