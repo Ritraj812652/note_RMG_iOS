@@ -78,31 +78,34 @@ class CoreData: NSObject {
         return categoryArray
         
     }
+    
+    
+    func saveNote(entity: NotesModel) {
+        let dataPoint = entity
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+         
+        let entity = NSEntityDescription.entity(forEntityName: "Notes", in: managedContext)!
+        let category = NSManagedObject(entity: entity, insertInto: managedContext)
+        category.setValue(dataPoint.createdDate, forKeyPath: "createdDate")
+        category.setValue(dataPoint.editedDate, forKeyPath: "editedDate")
+        category.setValue(dataPoint.latitude, forKeyPath: "latitude")
+        category.setValue(dataPoint.longitude, forKeyPath: "longitude")
+        category.setValue(dataPoint.primaryKey, forKeyPath: "primaryKey")
+        category.setValue(dataPoint.noteDesc, forKeyPath: "noteDesc")
+        category.setValue(dataPoint.title, forKeyPath: "title")
+        category.setValue(dataPoint.image, forKeyPath: "image")
+        category.setValue(dataPoint.audioFileLocation, forKeyPath: "audioFileLocation")
+         
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
 }
 
-func saveNote(entity: NotesModel) {
-    let dataPoint = entity
-    guard let appDelegate =
-        UIApplication.shared.delegate as? AppDelegate else {
-            return
-    }
-    let managedContext = appDelegate.persistentContainer.viewContext
-     
-    let entity = NSEntityDescription.entity(forEntityName: "Notes", in: managedContext)!
-    let category = NSManagedObject(entity: entity, insertInto: managedContext)
-    category.setValue(dataPoint.createdDate, forKeyPath: "createdDate")
-    category.setValue(dataPoint.editedDate, forKeyPath: "editedDate")
-    category.setValue(dataPoint.latitude, forKeyPath: "latitude")
-    category.setValue(dataPoint.longitude, forKeyPath: "longitude")
-    category.setValue(dataPoint.primaryKey, forKeyPath: "primaryKey")
-    category.setValue(dataPoint.noteDesc, forKeyPath: "noteDesc")
-    category.setValue(dataPoint.title, forKeyPath: "title")
-    category.setValue(dataPoint.image, forKeyPath: "image")
-    category.setValue(dataPoint.audioFileLocation, forKeyPath: "audioFileLocation")
-     
-    do {
-        try managedContext.save()
-    } catch let error as NSError {
-        print("Could not save. \(error), \(error.userInfo)")
-    }
-}
