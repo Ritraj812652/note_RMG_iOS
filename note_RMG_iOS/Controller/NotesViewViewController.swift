@@ -35,5 +35,20 @@ class NotesViewViewController: UIViewController {
         self.notesArray = CoreData().loadNotesData(id: CurrentObject.sharedInstance.selectedSubject!.createdDate)
         self.filterArray = notesArray!
     }
-
 }
+//MARK: - DataSource Methods
+extension NotesViewViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return filterArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: SubjectCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubjectCollectionCell", for: indexPath) as! SubjectCollectionCell
+        let subject = filterArray[indexPath.item]
+        cell.headingLabel.text = subject.title
+        cell.descriptionLabel.text = Helper().showDayDifference(date: subject.createdDate)
+       
+        return cell
+    }
+}
+
