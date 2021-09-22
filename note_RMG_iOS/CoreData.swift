@@ -107,5 +107,36 @@ class CoreData: NSObject {
         }
     }
     
+    func updateNote(entity: NotesModel) {
+        let dataPoint = entity
+        guard let appDelegate =
+                UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Notes")
+        let conditionOne = NSPredicate(format:"primaryKey = %lf", entity.primaryKey)
+        let conditionTwo = NSPredicate(format:"createdDate = %lf", entity.createdDate)
+        let andPredicate = NSCompoundPredicate(type: .and, subpredicates: [conditionOne, conditionTwo])
+        fetchRequest.predicate = andPredicate
+        
+        let result = try? managedContext.fetch(fetchRequest)
+        let category = result![0] as! NSManagedObject
+        category.setValue(dataPoint.createdDate, forKeyPath: "createdDate")
+        category.setValue(dataPoint.editedDate, forKeyPath: "editedDate")
+        category.setValue(dataPoint.latitude, forKeyPath: "latitude")
+        category.setValue(dataPoint.longitude, forKeyPath: "longitude")
+        category.setValue(dataPoint.primaryKey, forKeyPath: "primaryKey")
+        category.setValue(dataPoint.noteDesc, forKeyPath: "noteDesc")
+        category.setValue(dataPoint.title, forKeyPath: "title")
+        category.setValue(dataPoint.image, forKeyPath: "image")
+         
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
 }
 
