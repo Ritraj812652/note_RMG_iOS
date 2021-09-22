@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class AddNotesViewController: UIViewController {
 
@@ -18,10 +19,39 @@ class AddNotesViewController: UIViewController {
     @IBOutlet weak var playAudioImage: UIImageView!
     
     
+    var latitude  : Double?
+    var longitude : Double?
+    
+    var isEdit = false
+    
+    var locationManager: CLLocationManager!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        if isEdit {
+            self.title = "Edit note"
+        }
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() ==  .authorizedAlways
+        {
+            if let lat = locationManager.location?.coordinate.latitude {
+                self.latitude = lat
+                self.longitude = locationManager.location?.coordinate.longitude
+             
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    @IBAction func openLocation(_ sender: Any) {
     }
     
 
