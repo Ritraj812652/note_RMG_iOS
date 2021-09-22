@@ -90,7 +90,16 @@ class AddNotesViewController: UIViewController {
     }
     
     
-    
+    func update() {
+        let createdDate = notes?.createdDate
+        
+        let model = NotesModel.init(title: titleTextField.text!, noteDesc: notesTextField.text!, createdDate: createdDate!, editedDate: Date().toMillis(), latitude: latitude ?? 0.0, longitude: longitude ?? 0.0, primaryKey: CurrentObject.sharedInstance.selectedSubject!.createdDate, image: self.image, audioFileLocation: mAudioFileName)
+        CoreData().updateNote(entity: model)
+        self.stopLocationManager()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
     
     
     
