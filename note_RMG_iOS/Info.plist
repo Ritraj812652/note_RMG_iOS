@@ -20,6 +20,17 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+    <key>NSMicrophoneUsageDescription</key>
+        <string>for recording audio</string>
+        <key>NSLocationWhenInUseUsageDescription</key>
+        <string>Description</string>
+
+        <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+        <string>App want to use location to save in the notes</string>
+
+        <key>NSLocationAlwaysUsageDescription</key>
+        <string>App want to use location to save in the notes</string>
+
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
