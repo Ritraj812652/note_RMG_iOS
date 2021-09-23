@@ -138,5 +138,50 @@ class CoreData: NSObject {
         }
     }
     
+    func moveNote(entity: NotesModel, subjectCreatedDate: Double) {
+        guard let appDelegate =
+                UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Notes")
+        let conditionOne = NSPredicate(format:"primaryKey = %lf", entity.primaryKey)
+        let conditionTwo = NSPredicate(format:"createdDate = %lf", entity.createdDate)
+        let andPredicate = NSCompoundPredicate(type: .and, subpredicates: [conditionOne, conditionTwo])
+        fetchRequest.predicate = andPredicate
+        
+        let result = try? managedContext.fetch(fetchRequest)
+        let category = result![0] as! NSManagedObject
+        category.setValue(subjectCreatedDate, forKeyPath: "primaryKey")
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
+    func deleteExpense(entity: NotesModel) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Notes")
+
+        request.predicate = NSPredicate(format:"createdDate = %lf", entity.createdDate)
+
+        let result = try? context.fetch(request)
+        let resultData = result as! [NSManagedObject]
+
+        for object in resultData {
+            context.delete(object)
+        }
+        do {
+            try context.save()
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        } catch {
+            // add general error handle here
+        }
+    }
+    
 }
 
