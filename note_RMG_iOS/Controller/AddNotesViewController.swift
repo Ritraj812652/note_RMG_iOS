@@ -105,6 +105,14 @@ class AddNotesViewController: UIViewController {
         openMaps()
     }
     
+    @IBAction func deleteNote(_ sender: Any) {
+        self.showAlertWithCompletionTwoButtons(title: "", message: kDeleteNoteConfirmation) { [self](_) in
+            if self.notes != nil {
+                CoreData().deleteExpense(entity: self.notes!)
+            }
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
     
     @IBAction func addImage(_ sender: Any) {
         let alert = UIAlertController.init(title: "", message: "ATTACHMENTS", preferredStyle: .actionSheet)
@@ -225,7 +233,8 @@ class AddNotesViewController: UIViewController {
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.name = "Note saved location"
         mapItem.openInMaps(launchOptions: options)
-}
+    }
+    
 }
 
 

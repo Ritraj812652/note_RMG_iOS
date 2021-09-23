@@ -139,6 +139,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Categories" id="68i-gB-lM9">
+                        <barButtonItem key="leftBarButtonItem" image="sort" id="B1S-Fg-RmG">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="POe-ph-liv">
                             <color key="tintColor" red="0.92156862750000001" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                             <connections>
@@ -237,12 +240,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Notebook" id="qhK-X0-yes">
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="aSR-yj-ZyV">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <segue destination="Rnc-hz-jmy" kind="show" id="cqO-fU-42r"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="plus" catalog="system" id="aSR-yj-ZyV">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <segue destination="Rnc-hz-jmy" kind="show" id="cqO-fU-42r"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="sortByDate" id="pZb-xg-dbf">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="g0V-ZS-88L" id="GyF-8T-w5n"/>
@@ -262,7 +270,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NjI-RR-Bkr">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQH-uG-Iux">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="602"/>
@@ -502,6 +510,11 @@
                             <constraint firstItem="NjI-RR-Bkr" firstAttribute="trailing" secondItem="CwC-92-FZp" secondAttribute="trailing" id="gQv-P8-TpY"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem image="sort" id="laE-0k-G8n">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Subject" id="rUM-Sh-EmV">
                         <barButtonItem key="rightBarButtonItem" title="Delete" id="DgA-7N-pvz">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -510,6 +523,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addedImage" destination="YUu-RD-hWd" id="lVF-NY-9kN"/>
                         <outlet property="locationButton" destination="HC4-fk-I1I" id="y9c-VR-vHI"/>
@@ -534,7 +548,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eCa-Xe-CM1">
-                                <rect key="frame" x="0.0" y="97" width="414" height="765"/>
+                                <rect key="frame" x="0.0" y="97" width="414" height="716"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="mXa-7N-52w">
                                     <size key="itemSize" width="128" height="128"/>
@@ -584,6 +598,8 @@
         <image name="play" width="256" height="256"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="selectImage" width="256" height="256"/>
+        <image name="sort" width="15" height="15"/>
+        <image name="sortByDate" width="15" height="15"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
