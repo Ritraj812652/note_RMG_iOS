@@ -10,6 +10,7 @@ import UIKit
 class SubjectCollectionCell: UICollectionViewCell {
 
     @IBOutlet weak var headingLabel: UILabel!
+    @IBOutlet weak var noteLable: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var backView: UIView!
     

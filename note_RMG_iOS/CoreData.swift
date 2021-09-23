@@ -53,6 +53,28 @@ class CoreData: NSObject {
         }
     }
     
+    func deleteSubject(entity: SubjectModel) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Subjects")
+
+        request.predicate = NSPredicate(format:"createdDate = %lf", entity.createdDate)
+
+        let result = try? context.fetch(request)
+        let resultData = result as! [NSManagedObject]
+
+        for object in resultData {
+            context.delete(object)
+        }
+        do {
+            try context.save()
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        } catch {
+            // add general error handle here
+        }
+    }
+    
     func loadNotesData(id: Double) -> [NotesModel] {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Notes")
         fetchRequest.predicate = NSPredicate(format:"primaryKey = %lf", id)
@@ -130,7 +152,8 @@ class CoreData: NSObject {
         category.setValue(dataPoint.noteDesc, forKeyPath: "noteDesc")
         category.setValue(dataPoint.title, forKeyPath: "title")
         category.setValue(dataPoint.image, forKeyPath: "image")
-         
+        category.setValue(dataPoint.audioFileLocation, forKeyPath: "audioFileLocation")
+        
         do {
             try managedContext.save()
         } catch let error as NSError {

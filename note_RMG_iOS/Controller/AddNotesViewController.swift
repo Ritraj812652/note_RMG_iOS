@@ -11,7 +11,7 @@ import MapKit
 import Photos
 import MobileCoreServices
 
-class AddNotesViewController: UIViewController, CLLocationManagerDelegate {
+class AddNotesViewController: UIViewController {
 
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -227,7 +227,15 @@ extension AddNotesViewController : UIImagePickerControllerDelegate, UINavigation
             self.dismiss(animated: true, completion: nil)
         }
     }
-
+}
+// MARK: delegate methods to handle user lcoation
+extension AddNotesViewController: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            longitude = locations.last?.coordinate.longitude
+            latitude = locations.last?.coordinate.latitude
+    }
+    
     func startLocationManager() {
         let authorizationStatus = CLLocationManager.authorizationStatus()
         if authorizationStatus == .notDetermined {
@@ -245,4 +253,5 @@ extension AddNotesViewController : UIImagePickerControllerDelegate, UINavigation
         locationManager.delegate = nil
     }
 }
+
 
