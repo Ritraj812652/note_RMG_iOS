@@ -11,7 +11,7 @@ import MapKit
 import Photos
 import MobileCoreServices
 
-class AddNotesViewController: UIViewController {
+class AddNotesViewController: UIViewController, CLLocationManagerDelegate {
 
     
     @IBOutlet weak var titleTextField: UITextField!
@@ -21,7 +21,8 @@ class AddNotesViewController: UIViewController {
     @IBOutlet weak var playAudioButton: UIButton!
     @IBOutlet weak var playAudioImage: UIImageView!
     
-    
+    @IBOutlet weak var locationImg: UIImageView!
+    @IBOutlet weak var locationButton: UIButton!
     var latitude  : Double?
     var longitude : Double?
     var image = Data()
@@ -50,16 +51,12 @@ class AddNotesViewController: UIViewController {
         
         if isEdit {
             self.title = "Edit note"
+            self.locationImg.isHidden = false
+            self.locationButton.isHidden = false
         }
-        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
-            CLLocationManager.authorizationStatus() ==  .authorizedAlways
-        {
-            if let lat = locationManager.location?.coordinate.latitude {
-                self.latitude = lat
-                self.longitude = locationManager.location?.coordinate.longitude
-             
-            }
-        }
+        
+        startLocationManager()
+        // Do any additional setup after loading the view.
     }
     
     private func refreshUI() {
@@ -84,6 +81,7 @@ class AddNotesViewController: UIViewController {
         
         let model = NotesModel.init(title: titleTextField.text!, noteDesc: notesTextField.text!, createdDate: createdDate!, editedDate: Date().toMillis(), latitude: latitude ?? 0.0, longitude: longitude ?? 0.0, primaryKey: CurrentObject.sharedInstance.selectedSubject!.createdDate, image: self.image, audioFileLocation: self.mAudioFileName)
         CoreData().saveNote(entity: model)
+        self.stopLocationManager()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.navigationController?.popViewController(animated: true)
         }
@@ -95,7 +93,8 @@ class AddNotesViewController: UIViewController {
         
         let model = NotesModel.init(title: titleTextField.text!, noteDesc: notesTextField.text!, createdDate: createdDate!, editedDate: Date().toMillis(), latitude: latitude ?? 0.0, longitude: longitude ?? 0.0, primaryKey: CurrentObject.sharedInstance.selectedSubject!.createdDate, image: self.image, audioFileLocation: mAudioFileName)
         CoreData().updateNote(entity: model)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        self.stopLocationManager()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.navigationController?.popViewController(animated: true)
         }
     }
@@ -103,6 +102,7 @@ class AddNotesViewController: UIViewController {
     
     
     @IBAction func openLocation(_ sender: Any) {
+        openMaps()
     }
     
     
@@ -193,10 +193,26 @@ class AddNotesViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
         sender.view?.removeFromSuperview()
     }
+    
+    func openMaps() {
+        if latitude == 0.0 {
+            self.showAlert(title: "", message: kNoLocation, buttonTitle: kGlobalOK)
+            return
+        }
 
-
+        let regionDistance:CLLocationDistance = 10000
+        let coordinates = CLLocationCoordinate2DMake(latitude!, longitude!)
+        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = "Note saved location"
+        mapItem.openInMaps(launchOptions: options)
 }
-
+}
 
 
 // MARK: - UIImagePicker Delegate
@@ -211,4 +227,22 @@ extension AddNotesViewController : UIImagePickerControllerDelegate, UINavigation
             self.dismiss(animated: true, completion: nil)
         }
     }
+
+    func startLocationManager() {
+        let authorizationStatus = CLLocationManager.authorizationStatus()
+        if authorizationStatus == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
+        }
+        if(CLLocationManager.locationServicesEnabled()) {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func stopLocationManager() {
+        locationManager.stopUpdatingLocation()
+        locationManager.delegate = nil
+    }
 }
+
