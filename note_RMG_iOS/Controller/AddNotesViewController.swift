@@ -151,7 +151,18 @@ class AddNotesViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
-
+    
+    @IBAction func addAudio(_ sender: Any) {
+        if audioRecorder == nil
+        {
+            startRecording()
+            recordAudioImg.image = UIImage.init(named: "stopRecording")
+        } else
+        {
+            finishRecording(success: true)
+            recordAudioImg.image = UIImage.init(named: "audio")
+        }
+    }
     
     @IBAction func saveAction(_ sender: Any) {
         if titleTextField.text == "" {
@@ -170,6 +181,9 @@ class AddNotesViewController: UIViewController {
         }
     }
     
+    @IBAction func playRecording(_ sender: Any) {
+        playAudio()
+    }
     
     @IBAction func imageTapped(_ sender: UIButton) {
         let imageView = addedImage!
@@ -228,6 +242,118 @@ extension AddNotesViewController : UIImagePickerControllerDelegate, UINavigation
         }
     }
 }
+
+//MARK: delegate for audio recording
+extension AddNotesViewController: AVAudioRecorderDelegate
+{
+    func setupRecording()
+    {
+        recordingSession = AVAudioSession.sharedInstance()
+        
+        do {
+            try recordingSession.setCategory(.playAndRecord, mode: .default)
+            try recordingSession.setActive(true)
+            recordingSession.requestRecordPermission() { [unowned self] allowed in
+                DispatchQueue.main.async {
+                    if allowed {
+                        //                        self.loadRecordingUI()
+                    } else {
+                        print("not allowed")
+                    }
+                }
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
+    func startRecording() {
+        mAudioFileName = randomString(length: 10) + ".m4a"
+        let audioFilename = getDocumentsDirectory().appendingPathComponent(mAudioFileName)
+        
+        let settings = [
+            AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
+            AVSampleRateKey: 12000,
+            AVNumberOfChannelsKey: 1,
+            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+        ]
+        
+        do {
+            audioRecorder = try AVAudioRecorder(url: audioFilename, settings: settings)
+            audioRecorder.delegate = self
+            audioRecorder.record()
+        } catch {
+            finishRecording(success: false)
+        }
+    }
+    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func finishRecording(success: Bool) {
+        audioRecorder.stop()
+        
+        if success {
+            print("success")
+            playAudioImage.isHidden = false
+            playAudioButton.isHidden = false
+            
+        } else {
+            print("not success")
+        }
+    }
+    
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if !flag {
+            finishRecording(success: false)
+        }
+    }
+}
+
+//MARK: delegate for audio playing
+extension AddNotesViewController: AVAudioPlayerDelegate
+{
+    func playAudio()
+    {
+        dump(audioRecorder)
+        var error : NSError?
+        do
+        {
+            var url: URL
+//            if recordingIsAvailable
+//            {
+                url = getDocumentsDirectory().appendingPathComponent(mAudioFileName)
+//            }
+//            else
+//            {
+//                url = audioRecorder.url
+//            }
+            print(url)
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            if let err = error{
+                print("audioPlayer error: \(err.localizedDescription)")
+            }else{
+                audioPlayer.play()
+            }
+            audioPlayer.delegate = self
+        }
+        catch
+        {
+            print(error)
+            
+        }
+        
+    }
+    
+    func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer!, error: NSError!) {
+        print("Audio Play Decode Error")
+    }
+    
+    
+}
+
 // MARK: delegate methods to handle user lcoation
 extension AddNotesViewController: CLLocationManagerDelegate {
     
