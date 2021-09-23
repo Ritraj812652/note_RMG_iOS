@@ -20,12 +20,17 @@ class SubjectViewController: UIViewController {
         
     }
 
+    var filterArray = [SubjectModel]()
+    
+    var isSorted = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.register(UINib.init(nibName: "SubjectCollectionCell", bundle: nil), forCellWithReuseIdentifier: "SubjectCollectionCell")
         
         loadData()
+        // Do any additional setup after loading the view.
     }
     
     // MARK: - UIAction
@@ -47,9 +52,21 @@ class SubjectViewController: UIViewController {
         self.view.bringSubviewToFront(addSubjectView)
     }
     
-    // MARK: - Functions
+    @IBAction func sortAction(_ sender: Any) {
+        if isSorted {
+            isSorted = false
+            self.filterArray = self.subjectsArray!
+        }
+        else {
+            isSorted = true
+            self.filterArray = self.subjectsArray!.sorted(by: { $0.title.lowercased() < $1.title.lowercased() })
+        }
+        collectionView.reloadData()
+    }
+    // MARK: - Functions    
     func loadData() {
         self.subjectsArray = CoreData().loadSubjectData()
+        self.filterArray = self.subjectsArray!
     }
     
     func removeAddNewPopup() {
@@ -71,18 +88,17 @@ class SubjectViewController: UIViewController {
     
 }
 
-// MARK: - DataSource Methods
 extension SubjectViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return subjectsArray?.count ?? 0
+        return filterArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: SubjectCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubjectCollectionCell", for: indexPath) as! SubjectCollectionCell
-        let subject = subjectsArray![indexPath.item]
+        let subject = filterArray[indexPath.item]
         cell.headingLabel.text = subject.title
         cell.descriptionLabel.text = Helper().showDayDifference(date: subject.createdDate)
-        //cell.backView.backgroundColor = Helper().getNoteBackColor().randomElement()
+        cell.backView.backgroundColor = Helper().getNoteBackColor().randomElement()
         return cell
     }
 }
@@ -98,7 +114,21 @@ extension SubjectViewController: UICollectionViewDelegateFlowLayout {
 
 extension SubjectViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        CurrentObject.sharedInstance.selectedSubject = subjectsArray![indexPath.item]
-        self.performSegue(withIdentifier: "DetailSegue", sender: self)
+        let alert = UIAlertController.init(title: "", message: filterArray[indexPath.item].title, preferredStyle: .actionSheet)
+        let viewAction = UIAlertAction.init(title: kView, style: .default) { (_) in
+            CurrentObject.sharedInstance.selectedSubject = self.filterArray[indexPath.item]
+            self.performSegue(withIdentifier: "DetailSegue", sender: self)
+        }
+        let deleteAction = UIAlertAction.init(title: kDelete, style: .destructive) { (_) in
+            CoreData().deleteSubject(entity: self.filterArray[indexPath.item])
+            DispatchQueue.main.async {
+                self.loadData()
+            }
+        }
+        let kCancelAction = UIAlertAction.init(title: kCancel, style: .cancel, handler: nil)
+        alert.addAction(viewAction)
+        alert.addAction(deleteAction)
+        alert.addAction(kCancelAction)
+        self.present(alert, animated: true, completion: nil)
     }
 }

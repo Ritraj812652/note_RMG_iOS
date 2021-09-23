@@ -55,7 +55,8 @@ class NotesViewViewController: UIViewController {
     }
     
 }
-//MARK: - DataSource Methods
+
+
 extension NotesViewViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return filterArray.count
@@ -65,8 +66,9 @@ extension NotesViewViewController: UICollectionViewDataSource {
         let cell: SubjectCollectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "SubjectCollectionCell", for: indexPath) as! SubjectCollectionCell
         let subject = filterArray[indexPath.item]
         cell.headingLabel.text = subject.title
+        cell.noteLable.text = subject.noteDesc
         cell.descriptionLabel.text = Helper().showDayDifference(date: subject.createdDate)
-       
+        cell.backView.backgroundColor = Helper().getNoteBackColor().randomElement()
         return cell
     }
 }
