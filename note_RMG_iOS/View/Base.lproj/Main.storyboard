@@ -244,7 +244,7 @@
                             <barButtonItem image="plus" catalog="system" id="aSR-yj-ZyV">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <segue destination="Rnc-hz-jmy" kind="show" id="cqO-fU-42r"/>
+                                    <segue destination="Rnc-hz-jmy" kind="show" identifier="AddEditNotes" id="cqO-fU-42r"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="sortByDate" id="pZb-xg-dbf">

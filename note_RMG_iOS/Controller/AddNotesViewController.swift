@@ -235,6 +235,18 @@ class AddNotesViewController: UIViewController {
         mapItem.openInMaps(launchOptions: options)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MoveNotesSegue" {
+            let vc = segue.destination as! SelectSubjectToMoveNotesViewController
+            vc.completion = {
+                let createDataOfSubject = $0
+                CoreData().moveNote(entity: self.notes!, subjectCreatedDate: createDataOfSubject!)
+                self.showAlertWithCompletion(title: "", message: kNoteMovedSuccessFully, buttonTitle: kGlobalOK) { (_) in
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+        }
+    }
 }
 
 

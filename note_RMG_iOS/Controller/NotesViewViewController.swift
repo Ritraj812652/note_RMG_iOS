@@ -35,7 +35,10 @@ class NotesViewViewController: UIViewController {
         loadData()
     }
     
-    
+    @IBAction func sortByDate(_ sender: Any) {
+        self.filterArray = notesArray!.sorted(by: { $0.createdDate < $1.createdDate })
+        collectionView.reloadData()
+    }
     
     // MARK: - Functions
     func loadData() {

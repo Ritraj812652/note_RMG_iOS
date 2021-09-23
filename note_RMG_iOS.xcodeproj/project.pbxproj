@@ -13,11 +13,11 @@
 		157D54FE26FAD49500F37078 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D54FD26FAD49500F37078 /* Constant.swift */; };
 		157D550026FAF79D00F37078 /* NotesViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D54FF26FAF79D00F37078 /* NotesViewViewController.swift */; };
 		157D550226FB152100F37078 /* AddNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D550126FB152100F37078 /* AddNotesViewController.swift */; };
+		159803BA26FD4280006205A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 159803B926FD4280006205A6 /* Assets.xcassets */; };
 		C66AE51F26FAA8CB00B81A3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66AE51E26FAA8CB00B81A3C /* AppDelegate.swift */; };
 		C66AE52126FAA8CB00B81A3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66AE52026FAA8CB00B81A3C /* SceneDelegate.swift */; };
 		C66AE52626FAA8CB00B81A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66AE52426FAA8CB00B81A3C /* Main.storyboard */; };
 		C66AE52926FAA8CB00B81A3C /* note_RMG_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C66AE52726FAA8CB00B81A3C /* note_RMG_iOS.xcdatamodeld */; };
-		C66AE52B26FAA8CD00B81A3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C66AE52A26FAA8CD00B81A3C /* Assets.xcassets */; };
 		C66AE52E26FAA8CD00B81A3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66AE52C26FAA8CD00B81A3C /* LaunchScreen.storyboard */; };
 		C66AE53626FAD0B400B81A3C /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66AE53526FAD0B400B81A3C /* CoreData.swift */; };
 		C6F61B9326FB116200664113 /* SubjectCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6F61B9126FB116200664113 /* SubjectCollectionCell.xib */; };
@@ -36,6 +36,7 @@
 		157D54FD26FAD49500F37078 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		157D54FF26FAF79D00F37078 /* NotesViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewViewController.swift; sourceTree = "<group>"; };
 		157D550126FB152100F37078 /* AddNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotesViewController.swift; sourceTree = "<group>"; };
+		159803B926FD4280006205A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Downloads/note_RMG_iOS 4/note_RMG_iOS/Assets.xcassets"; sourceTree = "<group>"; };
 		17AB59A97A44DE6CC7DAE25E /* Pods-note_RMG_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-note_RMG_iOS.release.xcconfig"; path = "Target Support Files/Pods-note_RMG_iOS/Pods-note_RMG_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		9E6F9DF67B5510588C4266DC /* Pods-note_RMG_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-note_RMG_iOS.debug.xcconfig"; path = "Target Support Files/Pods-note_RMG_iOS/Pods-note_RMG_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C24F310D95C08F5B5E848888 /* Pods_note_RMG_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_note_RMG_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,7 +45,6 @@
 		C66AE52026FAA8CB00B81A3C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C66AE52526FAA8CB00B81A3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C66AE52826FAA8CB00B81A3C /* note_RMG_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = note_RMG_iOS.xcdatamodel; sourceTree = "<group>"; };
-		C66AE52A26FAA8CD00B81A3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C66AE52D26FAA8CD00B81A3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C66AE52F26FAA8CD00B81A3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C66AE53526FAD0B400B81A3C /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		157D54F226FAB5D700F37078 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				C66AE52A26FAA8CD00B81A3C /* Assets.xcassets */,
+				159803B926FD4280006205A6 /* Assets.xcassets */,
 				C66AE52026FAA8CB00B81A3C /* SceneDelegate.swift */,
 				C66AE51E26FAA8CB00B81A3C /* AppDelegate.swift */,
 			);
@@ -133,6 +133,7 @@
 				157D54FD26FAD49500F37078 /* Constant.swift */,
 				157D54FB26FAD38700F37078 /* extension.swift */,
 				C6F61B9526FBAA3100664113 /* UiviewExtension.swift */,
+				C66AE53526FAD0B400B81A3C /* CoreData.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -166,7 +167,6 @@
 				C66AE52F26FAA8CD00B81A3C /* Info.plist */,
 				157D54F326FAB5F300F37078 /* View */,
 				157D54F226FAB5D700F37078 /* SupportingFiles */,
-				C66AE53526FAD0B400B81A3C /* CoreData.swift */,
 			);
 			path = note_RMG_iOS;
 			sourceTree = "<group>";
@@ -249,8 +249,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C66AE52E26FAA8CD00B81A3C /* LaunchScreen.storyboard in Resources */,
-				C66AE52B26FAA8CD00B81A3C /* Assets.xcassets in Resources */,
 				C6F61B9326FB116200664113 /* SubjectCollectionCell.xib in Resources */,
+				159803BA26FD4280006205A6 /* Assets.xcassets in Resources */,
 				C66AE52626FAA8CB00B81A3C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
