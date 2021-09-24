@@ -41,6 +41,7 @@ class SubjectViewController: UIViewController {
         }
         saveCategory()
         removeAddNewPopup()
+        addSubjectTextfield.text = ""
     }
     
     @IBAction func closeAddSubjectPopup(_ sender: Any) {
@@ -55,7 +56,8 @@ class SubjectViewController: UIViewController {
     @IBAction func sortAction(_ sender: Any) {
         if isSorted {
             isSorted = false
-            self.filterArray = self.subjectsArray!
+//            self.filterArray = self.subjectsArray!
+            self.filterArray = self.subjectsArray!.sorted(by: { $0.title.lowercased() > $1.title.lowercased() })
         }
         else {
             isSorted = true

@@ -141,6 +141,9 @@
                     <navigationItem key="navigationItem" title="Categories" id="68i-gB-lM9">
                         <barButtonItem key="leftBarButtonItem" image="sort" id="B1S-Fg-RmG">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="sortAction:" destination="eOW-2u-78i" id="XyA-gt-9YF"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="POe-ph-liv">
                             <color key="tintColor" red="0.92156862750000001" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -249,6 +252,9 @@
                             </barButtonItem>
                             <barButtonItem image="sortByDate" id="pZb-xg-dbf">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="sortByDate:" destination="17H-GW-of6" id="lQX-05-ms9"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>

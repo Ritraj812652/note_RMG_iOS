@@ -13,7 +13,6 @@
 		157D54FE26FAD49500F37078 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D54FD26FAD49500F37078 /* Constant.swift */; };
 		157D550026FAF79D00F37078 /* NotesViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D54FF26FAF79D00F37078 /* NotesViewViewController.swift */; };
 		157D550226FB152100F37078 /* AddNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157D550126FB152100F37078 /* AddNotesViewController.swift */; };
-		159803BA26FD4280006205A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 159803B926FD4280006205A6 /* Assets.xcassets */; };
 		C66AE51F26FAA8CB00B81A3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66AE51E26FAA8CB00B81A3C /* AppDelegate.swift */; };
 		C66AE52126FAA8CB00B81A3C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66AE52026FAA8CB00B81A3C /* SceneDelegate.swift */; };
 		C66AE52626FAA8CB00B81A3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C66AE52426FAA8CB00B81A3C /* Main.storyboard */; };
@@ -28,6 +27,7 @@
 		F971DF8126FAEF1500C3B052 /* NotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF8026FAEF1500C3B052 /* NotesModel.swift */; };
 		F971DF8326FAF55B00C3B052 /* ClassObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F971DF8226FAF55B00C3B052 /* ClassObject.swift */; };
 		F984F33126FD36170015B222 /* SelectSubjectToMoveNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F984F33026FD36170015B222 /* SelectSubjectToMoveNotesViewController.swift */; };
+		F99CC05626FD554A00A6331F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F99CC05526FD554A00A6331F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +36,6 @@
 		157D54FD26FAD49500F37078 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		157D54FF26FAF79D00F37078 /* NotesViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewViewController.swift; sourceTree = "<group>"; };
 		157D550126FB152100F37078 /* AddNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNotesViewController.swift; sourceTree = "<group>"; };
-		159803B926FD4280006205A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Downloads/note_RMG_iOS 4/note_RMG_iOS/Assets.xcassets"; sourceTree = "<group>"; };
 		17AB59A97A44DE6CC7DAE25E /* Pods-note_RMG_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-note_RMG_iOS.release.xcconfig"; path = "Target Support Files/Pods-note_RMG_iOS/Pods-note_RMG_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		9E6F9DF67B5510588C4266DC /* Pods-note_RMG_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-note_RMG_iOS.debug.xcconfig"; path = "Target Support Files/Pods-note_RMG_iOS/Pods-note_RMG_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C24F310D95C08F5B5E848888 /* Pods_note_RMG_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_note_RMG_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +55,7 @@
 		F971DF8026FAEF1500C3B052 /* NotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesModel.swift; sourceTree = "<group>"; };
 		F971DF8226FAF55B00C3B052 /* ClassObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassObject.swift; sourceTree = "<group>"; };
 		F984F33026FD36170015B222 /* SelectSubjectToMoveNotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSubjectToMoveNotesViewController.swift; sourceTree = "<group>"; };
+		F99CC05526FD554A00A6331F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 		157D54F226FAB5D700F37078 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				159803B926FD4280006205A6 /* Assets.xcassets */,
+				F99CC05526FD554A00A6331F /* Assets.xcassets */,
 				C66AE52026FAA8CB00B81A3C /* SceneDelegate.swift */,
 				C66AE51E26FAA8CB00B81A3C /* AppDelegate.swift */,
 			);
@@ -250,7 +250,7 @@
 			files = (
 				C66AE52E26FAA8CD00B81A3C /* LaunchScreen.storyboard in Resources */,
 				C6F61B9326FB116200664113 /* SubjectCollectionCell.xib in Resources */,
-				159803BA26FD4280006205A6 /* Assets.xcassets in Resources */,
+				F99CC05626FD554A00A6331F /* Assets.xcassets in Resources */,
 				C66AE52626FAA8CB00B81A3C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

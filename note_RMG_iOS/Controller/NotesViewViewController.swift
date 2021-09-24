@@ -13,6 +13,7 @@ class NotesViewViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var selectedIndex: Int?
+    var flagforsortdate: Bool = true
     
     var notesArray: [NotesModel]? {
         didSet {
@@ -36,8 +37,19 @@ class NotesViewViewController: UIViewController {
     }
     
     @IBAction func sortByDate(_ sender: Any) {
+        if flagforsortdate {
         self.filterArray = notesArray!.sorted(by: { $0.createdDate < $1.createdDate })
-        collectionView.reloadData()
+            
+            collectionView.reloadData()}
+        else{
+            self.filterArray = notesArray!.sorted(by: { $0.createdDate > $1.createdDate })
+            
+                collectionView.reloadData()
+            
+        }
+        flagforsortdate = !flagforsortdate
+
+            
     }
     
     // MARK: - Functions
