@@ -53,9 +53,11 @@ class AddNotesViewController: UIViewController {
             self.title = "Edit note"
             self.locationImg.isHidden = false
             self.locationButton.isHidden = false
+        } else {
+            startLocationManager()
         }
         
-        startLocationManager()
+        
         // Do any additional setup after loading the view.
     }
     
